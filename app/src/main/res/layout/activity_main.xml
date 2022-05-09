@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/purple_500"
+    android:clickable="false"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tittleTextView"
+        style="@style/default_text_style"
+        android:layout_width="144dp"
+        android:layout_height="96dp"
+        android:text="Vamos\nRachar!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.169" />
+
+    <TextView
+        android:id="@+id/rsTextView"
+        style="@style/default_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="60dp"
+        android:text="R$"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tittleTextView" />
+
+
+    <EditText
+        android:id="@+id/dividendEditText"
+        android:layout_width="135dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="44dp"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:fontFamily="@font/galindo"
+        android:inputType="numberDecimal"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.272"
+        app:layout_constraintStart_toEndOf="@+id/rsTextView"
+        app:layout_constraintTop_toBottomOf="@+id/tittleTextView"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/peopleImageView"
+        android:layout_width="61dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rsTextView"
+        app:srcCompat="@drawable/group2_512"
+        app:tint="@color/white" />
+
+    <EditText
+        android:id="@+id/divisorEditText"
+        android:layout_width="130dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:fontFamily="@font/galindo"
+        android:inputType="numberDecimal"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toEndOf="@+id/peopleImageView"
+        app:layout_constraintTop_toBottomOf="@+id/dividendEditText"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/rsTextView2"
+        style="@style/default_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="40dp"
+        android:text="R$"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/peopleImageView" />
+
+    <TextView
+        android:id="@+id/quotientTextView"
+        style="@style/default_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toEndOf="@+id/rsTextView2"
+        app:layout_constraintTop_toBottomOf="@+id/divisorEditText" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/shareButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="44dp"
+        android:clickable="true"
+        android:tint="@color/white"
+        android:tintMode="multiply"
+        app:backgroundTint="@color/purple_200"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rsTextView2"
+        app:srcCompat="?attr/actionModeShareDrawable" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/speakerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="44dp"
+        android:backgroundTint="@color/purple_200"
+        android:clickable="true"
+        app:backgroundTint="@color/purple_200"
+        app:layout_constraintStart_toEndOf="@+id/shareButton"
+        app:layout_constraintTop_toBottomOf="@+id/quotientTextView"
+        app:srcCompat="@android:drawable/ic_lock_silent_mode_off" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
