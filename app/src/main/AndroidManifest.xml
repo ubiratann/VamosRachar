@@ -11,7 +11,8 @@
         android:theme="@style/Theme.VamosRachar">
         <meta-data
             android:name="com.google.android.actions"
-            android:resource="@xml/activy_main(land)" />
+            android:resource="@layout/activity_main"
+            />
 
         <activity
             android:name=".MainActivity"
