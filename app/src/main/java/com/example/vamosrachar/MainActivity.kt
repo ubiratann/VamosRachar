@@ -6,6 +6,7 @@ import android.speech.tts.TextToSpeech
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
+import android.util.Log.INFO
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -24,7 +25,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener
     lateinit var share: FloatingActionButton
     lateinit var speaker: FloatingActionButton
 
-    lateinit var playerTTS: TextToSpeech;
+    lateinit var playerTTS: TextToSpeech
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,7 +53,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener
         override fun afterTextChanged(s: Editable?) {}
         override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
         override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-            val mean: Double? = calcMean();
+            val mean: Double? = calcMean()
             if (mean != null)
                 quotient.text = DecimalFormat("00.00").format(mean).toString()
             else
@@ -62,18 +63,33 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener
 
     private fun onClickShare() {
         val intent = Intent()
+        var shareMessage: String = "You and the other "+divisor.text.toString()+" guys have a " + quotient.text.toString() + "$ payment to do :)"
+        var shareTitle: String = "Share on: "
+
+        if (Locale.getDefault().toLanguageTag().equals("pt-BR")){
+            shareMessage = "Você e as outras "+divisor.text.toString()+" pessoas têm uma dívida de " + quotient.text.toString() + " R$ a pagar :)"
+            shareTitle = "Compartilhar em:"
+        }
+
         intent.action = Intent.ACTION_SEND
+
+        Log.v( "" ,Locale.getDefault().toLanguageTag())
+
+
         intent.putExtra(
-            Intent.EXTRA_TEXT, ("Você e as outras "+divisor.text.toString()+" pessoas têm uma dívida de " + quotient.text.toString() + " R$ a pagar ':)")
+            Intent.EXTRA_TEXT, (shareMessage)
         )
         intent.type = "text/plain"
-        startActivity(Intent.createChooser(intent, "Compartilhar em:"))
+        startActivity(Intent.createChooser(intent, shareTitle))
     }
 
     private fun speakOut() {
-        val text: String = "Você e as outras "+divisor.text.toString()+" pessoas têm uma dívida de " + quotient.text.toString() + " R$ a pagar ':)"
+        var text: String = "You and the other "+divisor.text.toString()+" guys have a " + quotient.text.toString() + "$ payment to do"
+        if (Locale.getDefault().toLanguageTag().equals("pt-BR")){
+            text = "Você e as outras "+divisor.text.toString()+" pessoas têm uma dívida de " + quotient.text.toString() + " R$ a pagar"
+        }
+
         playerTTS.speak(text, TextToSpeech.QUEUE_FLUSH, null,"")
-        Log.println(Log.INFO,"","Entrou")
     }
 
     override fun onInit(status: Int) {
@@ -88,8 +104,8 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener
     }
 
     fun calcMean(): Double?{
-        val dividendDouble: Double? = dividend.text.toString().toDoubleOrNull();
-        val divisorInt: Int? = divisor.text.toString().toIntOrNull();
+        val dividendDouble: Double? = dividend.text.toString().toDoubleOrNull()
+        val divisorInt: Int? = divisor.text.toString().toIntOrNull()
         var result: Double? = null
 
         if (dividendDouble == null || divisorInt == null) return result
