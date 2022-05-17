@@ -9,6 +9,36 @@
     tools:context=".MainActivity">
 
 
+    <EditText
+        android:id="@+id/dividendEditText"
+        android:layout_width="135dp"
+        android:layout_height="71dp"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:fontFamily="@font/galindo"
+        android:inputType="numberDecimal"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.435"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/rsTextView"
+        style="@style/default_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:text="R$"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.471" />
+
     <TextView
         android:id="@+id/tittleTextView"
         style="@style/default_text_style"
@@ -17,39 +47,54 @@
         android:text="Vamos\nRachar!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.524"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.085" />
+        app:layout_constraintVertical_bias="0.063" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/speakerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="392dp"
+        android:layout_marginTop="52dp"
+        android:backgroundTint="#DFC9FA"
+        android:clickable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.208"
+        app:layout_constraintStart_toEndOf="@+id/shareButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_lock_silent_mode_off" />
 
     <EditText
         android:id="@+id/divisorEditText"
         android:layout_width="138dp"
         android:layout_height="71dp"
-        android:layout_marginStart="63dp"
-        android:layout_marginTop="24dp"
         android:backgroundTint="@color/white"
         android:ems="10"
         android:fontFamily="@font/galindo"
         android:inputType="numberDecimal"
         android:textColor="@color/white"
         android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.283"
-        app:layout_constraintStart_toEndOf="@+id/peopleImageView"
-        app:layout_constraintTop_toBottomOf="@+id/dividendEditText"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75"
         tools:visibility="visible" />
 
-    <TextView
-        android:id="@+id/rsTextView"
-        style="@style/default_text_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="216dp"
-        android:layout_marginTop="28dp"
-        android:text="R$"
+    <ImageView
+        android:id="@+id/peopleImageView"
+        android:layout_width="61dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="124dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tittleTextView" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.759"
+        app:srcCompat="@drawable/group2_512"
+        app:tint="@color/white" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/shareButton"
@@ -57,77 +102,45 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="88dp"
         android:layout_marginTop="48dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="47dp"
         android:clickable="true"
+        android:contentDescription="share button"
         android:tint="@color/white"
         android:tintMode="multiply"
-        app:backgroundTint="@color/purple_200"
-        app:layout_constraintEnd_toStartOf="@+id/rsTextView"
-        app:layout_constraintHorizontal_bias="0.597"
+        app:backgroundTint="#DFC9FA"
+        app:layout_constraintBottom_toTopOf="@+id/rsTextView"
+        app:layout_constraintEnd_toStartOf="@+id/tittleTextView"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.235"
         app:srcCompat="?attr/actionModeShareDrawable" />
-
-    <ImageView
-        android:id="@+id/peopleImageView"
-        android:layout_width="61dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="208dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rsTextView"
-        app:srcCompat="@drawable/group2_512"
-        app:tint="@color/white" />
-
-    <EditText
-        android:id="@+id/dividendEditText"
-        android:layout_width="135dp"
-        android:layout_height="71dp"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="28dp"
-        android:backgroundTint="@color/white"
-        android:ems="10"
-        android:fontFamily="@font/galindo"
-        android:inputType="numberDecimal"
-        android:textColor="@color/white"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.358"
-        app:layout_constraintStart_toEndOf="@+id/rsTextView"
-        app:layout_constraintTop_toBottomOf="@+id/tittleTextView"
-        tools:visibility="visible" />
 
     <TextView
         android:id="@+id/rsTextView2"
         style="@style/default_text_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="272dp"
-        android:layout_marginTop="48dp"
         android:text="R$"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.724"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/peopleImageView" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.504" />
 
     <TextView
         android:id="@+id/quotientTextView"
         style="@style/default_text_style"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintStart_toEndOf="@+id/rsTextView2"
-        app:layout_constraintTop_toBottomOf="@+id/divisorEditText" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/speakerButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="364dp"
-        android:layout_marginTop="56dp"
-        android:backgroundTint="@color/purple_200"
-        android:clickable="true"
-        app:backgroundTint="@color/purple_200"
-        app:layout_constraintStart_toEndOf="@+id/shareButton"
+        android:layout_width="120dp"
+        android:layout_height="52dp"
+        android:layout_marginEnd="48dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_lock_silent_mode_off" />
+        app:layout_constraintVertical_bias="0.498"
+        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
